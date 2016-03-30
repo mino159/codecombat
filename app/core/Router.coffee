@@ -122,7 +122,8 @@ module.exports = class CocoRouter extends Backbone.Router
 
     'schools': go('NewHomeView')
 
-    'teachers': go('NewHomeView')
+    'teachers': ->
+      @navigate('/teachers/classes', { trigger: true, replace: true })
     'teachers/classes': go('courses/TeacherClassesView', { teachersOnly: true })
     'teachers/classes/:classroomID': go('courses/TeacherClassView', { teachersOnly: true })
     'teachers/courses': go('courses/TeacherCoursesView', { teachersOnly: true })
