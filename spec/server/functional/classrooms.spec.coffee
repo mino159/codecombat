@@ -79,8 +79,7 @@ describe 'POST /db/classroom', ->
         expect(res.statusCode).toBe(401)
         done()
 
-  # TODO: Re-enable when we enforce this again
-  xit 'does not work for non-teacher users', (done) ->
+  it 'does not work for non-teacher users', (done) ->
     loginNewUser (user1) ->
       data = { name: 'Classroom 1' }
       request.post {uri: classroomsURL, json: data }, (err, res, body) ->
@@ -155,8 +154,7 @@ describe 'POST /db/classroom/~/members', ->
                   expect(user2.get('role')).toBe('student')
                   done()
 
-  # TODO: Re-enable when we enforce this again
-  xit 'does not work if the user is a teacher', (done) ->
+  it 'does not work if the user is a teacher', (done) ->
     loginNewUser (user1) ->
       user1.set('role', 'teacher')
       user1.save (err) ->
@@ -223,7 +221,6 @@ describe 'POST /db/classroom/:id/invite-members', ->
           request.post { uri: url, json: data }, (err, res, body) ->
             expect(res.statusCode).toBe(200)
             done()
-          done()
 
           
 describe 'GET /db/classroom/:handle/member-sessions', ->

@@ -1,4 +1,4 @@
-go = (path) -> -> @routeDirectly path, arguments
+go = (path, options) -> -> @routeDirectly path, arguments, options
 
 module.exports = class CocoRouter extends Backbone.Router
 
@@ -57,13 +57,13 @@ module.exports = class CocoRouter extends Backbone.Router
     'contribute/diplomat': go('contribute/DiplomatView')
     'contribute/scribe': go('contribute/ScribeView')
 
-    'courses': go('courses/CoursesView')
-    'Courses': go('courses/CoursesView')
-    'courses/students': go('courses/StudentCoursesView')
+    'courses': go('courses/CoursesView', { studentsOnly: true })
+    'Courses': go('courses/CoursesView', { studentsOnly: true })
+    'courses/students': go('courses/StudentCoursesView', { studentsOnly: true })
     'courses/teachers': go('courses/TeacherCoursesView')
     'courses/purchase': go('courses/PurchaseCoursesView')
     'courses/enroll(/:courseID)': go('courses/CourseEnrollView')
-    'courses/:classroomID': go('courses/ClassroomView')
+    'courses/:classroomID': go('courses/ClassroomView', { studentsOnly: true })
     'courses/:courseID/:courseInstanceID': go('courses/CourseDetailsView')
 
     'db/*path': 'routeToServer'
@@ -123,11 +123,11 @@ module.exports = class CocoRouter extends Backbone.Router
     'schools': go('NewHomeView')
 
     'teachers': go('NewHomeView')
-    'teachers/classes': go('courses/TeacherClassesView')
-    'teachers/classes/:classroomID': go('courses/TeacherClassView')
-    'teachers/courses': go('courses/TeacherCoursesView')
+    'teachers/classes': go('courses/TeacherClassesView', { teachersOnly: true })
+    'teachers/classes/:classroomID': go('courses/TeacherClassView', { teachersOnly: true })
+    'teachers/courses': go('courses/TeacherCoursesView', { teachersOnly: true })
     'teachers/demo': go('teachers/RequestQuoteView')
-    'teachers/enrollments': go('courses/EnrollmentsView')
+    'teachers/enrollments': go('courses/EnrollmentsView', { teachersOnly: true })
     'teachers/freetrial': go('teachers/RequestQuoteView')
     'teachers/quote': go('teachers/RequestQuoteView')
     'teachers/signup': ->
@@ -150,7 +150,12 @@ module.exports = class CocoRouter extends Backbone.Router
   removeTrailingSlash: (e) ->
     @navigate e, {trigger: true}
 
-  routeDirectly: (path, args, options={}) ->
+  routeDirectly: (path, args=[], options={}) ->
+    if options.teachersOnly and not me.isTeacher()
+      return @routeDirectly('teachers/RestrictedToTeachersView')
+    if options.studentsOnly and me.isTeacher()
+      return @routeDirectly('courses/RestrictedToStudentsView')
+    
     path = 'play/CampaignView' if window.serverConfig.picoCTF and not /^(views)?\/?play/.test(path)
     path = "views/#{path}" if not _.string.startsWith(path, 'views/')
     ViewClass = @tryToLoadModule path
