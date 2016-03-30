@@ -60,7 +60,8 @@ module.exports = class CocoRouter extends Backbone.Router
     'courses': go('courses/CoursesView', { studentsOnly: true })
     'Courses': go('courses/CoursesView', { studentsOnly: true })
     'courses/students': go('courses/StudentCoursesView', { studentsOnly: true })
-    'courses/teachers': go('courses/TeacherCoursesView')
+    'courses/teachers': ->
+      @navigate('/teachers/courses', { trigger: true, replace: true })
     'courses/purchase': go('courses/PurchaseCoursesView')
     'courses/enroll(/:courseID)': go('courses/CourseEnrollView')
     'courses/:classroomID': go('courses/ClassroomView', { studentsOnly: true })
