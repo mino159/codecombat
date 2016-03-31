@@ -46,8 +46,9 @@ module.exports = class TeacherClassView extends RootView
     
     @listenTo @classroom, 'sync', ->
       @students = new Users()
-      @students.fetchForClassroom(@classroom)
-      @supermodel.trackCollection(@students)
+      jqxhrs = @students.fetchForClassroom(@classroom)
+      if jqxhrs.length > 0
+        @supermodel.trackCollection(@students)
       @listenTo @students, 'sync', @sortByName
       @listenTo @students, 'sort', @renderSelectors.bind(@, '.students-table', '.student-levels-table')
       

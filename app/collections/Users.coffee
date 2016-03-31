@@ -19,6 +19,5 @@ module.exports = class Users extends CocoCollection
       options = _.cloneDeep(options)
       options.data.memberSkip = skip
       jqxhrs.push(@fetch(options))
-      console.log "Sending a request!", jqxhrs[jqxhrs.length - 1]
       skip += limit
     return jqxhrs
