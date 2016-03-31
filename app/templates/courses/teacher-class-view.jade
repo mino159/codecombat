@@ -164,6 +164,8 @@ mixin studentRow(student)
         label.checkmark(for='checkbox-student-' + student.id)
     td.student-info-col
       .student-info
+        if student.get('deleted')
+          em (deleted)
         div.student-name= student.get('name')
         div.student-email.small-details= student.get('email')
     td.hidden
