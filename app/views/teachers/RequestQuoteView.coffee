@@ -8,7 +8,7 @@ errors = require 'core/errors'
 ConfirmModal = require 'views/editor/modal/ConfirmModal'
 
 FORM_KEY = 'request-quote-form'
-SIGNUP_REDIRECT = '/teachers/courses'
+SIGNUP_REDIRECT = '/teachers'
 
 module.exports = class RequestQuoteView extends RootView
   id: 'request-quote-view'
