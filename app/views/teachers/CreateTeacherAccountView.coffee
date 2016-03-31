@@ -134,6 +134,7 @@ module.exports = class CreateTeacherAccountView extends RootView
   onTrialRequestSubmit: ->
     storage.remove(FORM_KEY)
     attrs = _.pick(forms.formToObject(@$('form')), 'name', 'email', 'role')
+    attrs.role = attrs.role.toLowerCase()
     options = {}
     newUser = new User(attrs)
     if @gplusAttrs
