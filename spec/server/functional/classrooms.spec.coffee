@@ -173,6 +173,18 @@ describe 'POST /db/classroom/~/members', ->
                 Classroom.findById classroomID, (err, classroom) ->
                   expect(classroom.get('members').length).toBe(0)
                   done()
+                  
+  it 'does not work if the user is anonymous', utils.wrap (done) ->
+    yield utils.clearModels([User, Classroom])
+    teacher = yield utils.initUser({role: 'teacher'})
+    yield utils.loginUser(teacher)
+    [res, body] = yield request.postAsync {uri: classroomsURL, json: { name: 'Classroom' } }
+    expect(res.statusCode).toBe(200)
+    classroomCode = body.code
+    yield utils.becomeAnonymous()
+    [res, body] = yield request.postAsync { uri: getURL("/db/classroom/~/members"), json: { code: classroomCode } }
+    expect(res.statusCode).toBe(401)
+    done()
 
 
 describe 'DELETE /db/classroom/:id/members', ->

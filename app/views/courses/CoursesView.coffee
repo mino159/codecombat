@@ -58,7 +58,7 @@ module.exports = class CoursesView extends RootView
 
   onLoaded: ->
     super()
-    if utils.getQueryVariable('_cc', false)
+    if utils.getQueryVariable('_cc', false) and not me.isAnonymous()
       @joinClass()
 
   onClickStartNewGameButton: ->
