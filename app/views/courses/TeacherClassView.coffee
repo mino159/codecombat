@@ -4,6 +4,7 @@ helper = require 'lib/coursesHelper'
 ClassroomSettingsModal = require 'views/courses/ClassroomSettingsModal'
 InviteToClassroomModal = require 'views/courses/InviteToClassroomModal'
 ActivateLicensesModal = require 'views/courses/ActivateLicensesModal'
+RemoveStudentModal = require 'views/courses/RemoveStudentModal'
 
 Classroom = require 'models/Classroom'
 Classrooms = require 'collections/Classrooms'
@@ -26,6 +27,7 @@ module.exports = class TeacherClassView extends RootView
     'click .sort-by-progress': 'sortByProgress'
     'click #copy-url-btn': 'copyURL'
     'click #copy-code-btn': 'copyCode'
+    'click .remove-student-link': 'onClickRemoveStudentLink'
     'click .enroll-student-button': 'onClickEnroll'
     'click .assign-to-selected-students': 'onClickBulkAssign'
     'click .enroll-selected-students': 'onClickBulkEnroll'
@@ -110,6 +112,21 @@ module.exports = class TeacherClassView extends RootView
     modal = new ClassroomSettingsModal({ classroom: classroom })
     @openModalView(modal)
     @listenToOnce modal, 'hide', @render
+  
+  onClickRemoveStudentLink: (e) ->
+    user = @students.get($(e.currentTarget).data('student-id'))
+    modal = new RemoveStudentModal({
+      classroom: @classroom
+      user: user
+      courseInstances: @courseInstances
+    })
+    @openModalView(modal)
+    modal.once 'remove-student', @onStudentRemoved, @
+
+  onStudentRemoved: (e) ->
+    @students.remove(e.user)
+    @render()
+    application.tracker?.trackEvent 'Classroom removed student', category: 'Courses', classroomID: @classroom.id, userID: e.user.id
 
   onClickAddStudents: (e) =>
     modal = new InviteToClassroomModal({ classroom: @classroom })

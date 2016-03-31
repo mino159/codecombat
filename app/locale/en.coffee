@@ -1273,6 +1273,7 @@
     course_progress: "Course Progress"
     not_applicable: "N/A"
     edit: "edit"
+    remove: "remove"
     latest_completed: "Latest Completed"
     sort_by: "Sort by"
     progress: "Progress"
