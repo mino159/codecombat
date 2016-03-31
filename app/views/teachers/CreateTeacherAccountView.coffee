@@ -8,7 +8,7 @@ errors = require 'core/errors'
 User = require 'models/User'
 
 FORM_KEY = 'request-quote-form'
-SIGNUP_REDIRECT = '/courses/teachers'
+SIGNUP_REDIRECT = '/teachers/courses'
 
 module.exports = class CreateTeacherAccountView extends RootView
   id: 'create-teacher-account-view'

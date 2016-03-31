@@ -4,7 +4,7 @@ block content
 
   - var isOwner = view.classroom ? view.classroom.get('ownerID') === me.id : false;
   if isOwner
-    a(href="/courses/teachers", data-i18n="courses.back_classrooms")
+    a(href="/teachers/courses", data-i18n="courses.back_classrooms")
   else
     a(href="/courses", data-i18n="courses.back_courses")
 
