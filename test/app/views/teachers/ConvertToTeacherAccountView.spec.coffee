@@ -73,10 +73,10 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
       })
       _.defer done # Let SuperModel finish
 
-    it 'redirects to /courses/teachers', ->
+    it 'redirects to /teachers/courses', ->
       expect(application.router.navigate).toHaveBeenCalled()
       args = application.router.navigate.calls.argsFor(0)
-      expect(args[0]).toBe('/courses/teachers')
+      expect(args[0]).toBe('/teachers/courses')
 
 
   describe 'when the user has role "student"', ->
@@ -128,7 +128,7 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
       attrs = JSON.parse(request.params)
       expect(attrs.properties?.firstName).toBe('Mr')
 
-    it 'redirects to /courses/teachers', ->
+    it 'redirects to /teachers/courses', ->
       spyOn(application.router, 'navigate')
       request = jasmine.Ajax.requests.mostRecent()
       request.respondWith({
@@ -137,7 +137,7 @@ describe 'ConvertToTeacherAccountView (/teachers/convert)', ->
       })
       expect(application.router.navigate).toHaveBeenCalled()
       args = application.router.navigate.calls.argsFor(0)
-      expect(args[0]).toBe('/courses/teachers')
+      expect(args[0]).toBe('/teachers/courses')
 
      it 'sets a teacher role', ->
       spyOn(application.router, 'navigate')
