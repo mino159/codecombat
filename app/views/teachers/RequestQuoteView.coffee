@@ -131,6 +131,8 @@ module.exports = class RequestQuoteView extends RootView
 
   onTrialRequestSubmit: ->
     me.setRole @trialRequest.get('properties').role.toLowerCase(), true
+    defaultName = [@trialRequest.get('firstName'), @trialRequest.get('lastName')].join(' ')
+    @$('input[name="name"]').val(defaultName)
     storage.remove(FORM_KEY)
     @$('#request-form, #form-submit-success').toggleClass('hide')
     @scrollToTop(0)
