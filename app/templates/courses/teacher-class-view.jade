@@ -8,15 +8,15 @@ block content
   if classroom.loaded
     .container
       +breadcrumbs
-      h3= classroom.get('name')
+      h3.m-t-2= classroom.get('name')
       a.label.edit-classroom(data-classroom-id=classroom.id)
         span(data-i18n='teacher.edit_class_settings')
       h4= classroom.get('description')
       
-      .classroom-info-row.row
+      .classroom-info-row.row.m-t-5
         .classroom-details.col-md-3
           - var stats = view.classStats()
-          h4(data-i18n='teacher.class_overview')
+          h4.m-b-2(data-i18n='teacher.class_overview')
       
           .language.small-details
             span(data-i18n='teacher.language')
@@ -61,28 +61,30 @@ block content
           //-           span(data-i18n='concepts.'+name)
           
         .completeness-info.col-md-4
+          h4.m-b-2
+            &nbsp;
           if view.earliestIncompleteLevel
-            div
+            div.small-details
               span(data-i18n='teacher.earliest_incomplete')
               span :
             +longLevelName(view.earliestIncompleteLevel)
             +inlineUserList(view.earliestIncompleteLevel.users)
             
           if view.latestCompleteLevel
-            div
+            div.small-details.m-t-3
               span(data-i18n='teacher.latest_complete')
               span :
             +longLevelName(view.latestCompleteLevel)
             +inlineUserList(view.latestCompleteLevel.users)
             
         .adding-students.col-md-5
-          h4
+          h4.m-b-2
             span(data-i18n='teacher.adding_students')
             span :
           +copyCodes
           +addStudentsButton
           
-      ul.nav.nav-tabs(role='tablist')
+      ul.nav.nav-tabs.m-t-5(role='tablist')
         li.active
           a(href='#students-tab' data-toggle='tab')
             .small-details.text-center(data-i18n='teacher.students')
@@ -250,14 +252,14 @@ mixin progressDotLabel(label)
       = label
 
 mixin copyCodes
-  div.copy-button-group.form-inline
+  div.copy-button-group.form-inline.m-b-3
     .form-group
       input.text-h4.semibold#join-code-input(value=view.classCode)
     button#copy-code-btn.form-control.btn.btn-lg.btn-forest
       span(data-i18n='teacher.copy_class_code')
     div.text-center.small(data-i18n='teacher.class_code_blurb')
       
-  div.copy-button-group.form-inline
+  div.copy-button-group.form-inline.m-b-3
     .form-group
       input.form-control.text-h4.semibold#join-url-input(value=view.joinURL)
     button#copy-url-btn.form-control.btn.btn-lg.btn-forest
