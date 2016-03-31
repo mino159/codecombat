@@ -46,7 +46,7 @@ module.exports = class ClassroomView extends RootView
     @prepaids.comparator = '_id'
     @prepaids.fetchByCreator(me.id)
     @supermodel.loadCollection(@prepaids)
-    @users = new CocoCollection([], { url: "/db/classroom/#{classroomID}/members", model: User })
+    @users = new CocoCollection([], { url: "/db/classroom/#{classroomID}/members?memberLimit=100", model: User })
     @users.comparator = (user) => user.broadName().toLowerCase()
     @supermodel.loadCollection(@users)
     @listenToOnce @courseInstances, 'sync', @onCourseInstancesSync
