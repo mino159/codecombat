@@ -227,7 +227,7 @@ mixin studentLevelsRow(student)
   .student-levels-row.alternating-background
     div.student-info
       div.student-name= student.get('name')
-      div.student-email.small-details emailaddress@school.edu
+      div.student-email.small-details= student.get('email')
     div.student-levels-progress
       - var course = view.selectedCourse
       - var campaign = view.campaigns.get(course.get('campaignID'))
