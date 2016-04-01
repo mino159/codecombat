@@ -1229,7 +1229,7 @@
     student_age_range_to: "to"
     create_class: "Create Class"
     class_name: "Class Name"
-
+    
     teacher_account_restricted: "Your account is a teacher account, and so cannot access student content."
 
   teacher:
@@ -1286,6 +1286,7 @@
     add_students_manually: "Add Students Manually"
     bulk_assign: "Bulk-assign"
     assign_to_selected_students: "Assign to Selected Students"
+    assigned: "Assigned"
     enroll_selected_students: "Enroll Selected Students"
     
     guides_coming_soon: "Guides coming soon!" # Courses

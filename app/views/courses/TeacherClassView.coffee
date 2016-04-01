@@ -198,8 +198,7 @@ module.exports = class TeacherClassView extends RootView
 
     if courseInstance
       courseInstance.addMembers members, {
-        success: =>
-          @render() unless @destroyed
+        success: @onBulkAssignSuccess
       }
     else
       courseInstance = new CourseInstance {
@@ -212,11 +211,14 @@ module.exports = class TeacherClassView extends RootView
       courseInstance.save {}, {
         success: =>
           courseInstance.addMembers members, {
-            success: =>
-              @render() unless @destroyed
+            success: @onBulkAssignSuccess
           }
       }
     null
+    
+  onBulkAssignSuccess: =>
+    @render() unless @destroyed
+    noty text: $.i18n.t('teacher.assigned'), layout: 'center', type: 'information', killer: true, timeout: 5000
     
   onClickSelectAll: (e) ->
     e.preventDefault()
