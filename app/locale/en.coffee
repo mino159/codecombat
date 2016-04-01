@@ -1228,6 +1228,7 @@
     student_age_range_older: "Older than 18"
     student_age_range_to: "to"
     create_class: "Create Class"
+    class_name: "Class Name"
 
     teacher_account_restricted: "Your account is a teacher account, and so cannot access student content."
 
