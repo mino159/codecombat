@@ -115,7 +115,7 @@ module.exports = class ConvertToTeacherAccountView extends RootView
   onTrialRequestSubmit: ->
     me.setRole @trialRequest.get('properties').role.toLowerCase(), true
     storage.remove(FORM_KEY)
-    application.router.navigate('/teachers/courses', {trigger: true})
+    application.router.navigate('/teachers/classes', {trigger: true})
 
 formSchema = {
   type: 'object'
