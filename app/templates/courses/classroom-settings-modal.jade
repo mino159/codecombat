@@ -26,8 +26,8 @@ block modal-body-content
       select#programming-language-select.form-control(name="language" value=aceConfig.language disabled=languageDisabled)
         - var aceConfig = view.classroom.get('aceConfig') || {};
         option(value="" data-i18n="courses.language_select")
-        option(value="python", data-i18n="courses.learn_p")
-        option(value="javascript", data-i18n="courses.learn_j")
+        option(value="python") Python
+        option(value="javascript") JavaScript
         
     .form-group
       label
