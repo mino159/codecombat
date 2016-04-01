@@ -14,7 +14,7 @@ Products = require 'collections/Products'
 module.exports = class EnrollmentsView extends RootView
   id: 'enrollments-view'
   template: template
-  numberOfStudents: 30
+  numberOfStudents: 15
   pricePerStudent: 0
 
   initialize: (options) ->
