@@ -1,18 +1,5 @@
 .style-flat
   block header
-    .container-fluid.text-center
-      .alert.alert-danger.lt-ie9
-        strong(data-i18n="home.no_ie")
-
-      if view.isIPadBrowser() || view.isMobile()
-        .alert.alert-danger.mobile
-          strong(data-i18n="home.no_mobile")
-      else if view.isOldBrowser()
-        .alert.alert-danger.old-browser
-          strong(data-i18n="home.old_browser")
-          br
-          span(data-i18n="home.old_browser_suffix")
-
     nav#main-nav.navbar.navbar-default
       .container
         .row
