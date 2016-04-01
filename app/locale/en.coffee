@@ -129,7 +129,6 @@
     jobs: "Jobs"
     schools: "Schools"
     educator_wiki: "Educator Wiki"
-    request_quote: "Request a Quote"
     get_involved: "Get Involved"
     open_source: "Open source (GitHub)"
     support: "Support"
@@ -1310,7 +1309,6 @@
     how_to_enroll_blurb_2: "To bulk-enroll multiple students, select them using the checkboxes on the left side of the classroom page and click the \"Enroll Selected Students\" button."
     how_to_enroll_blurb_3: "Once a student is enrolled, they will have access to all of the course content forever, even if they leave your class."
     bulk_pricing_blurb: "Purchasing for more than 15 students? Get in touch with us for bulk pricing quotes."
-    request_quote: "Request Quote"
 
   classes:
     archmage_title: "Archmage"
