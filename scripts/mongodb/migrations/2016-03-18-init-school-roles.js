@@ -1,3 +1,14 @@
+// Set all users with approved trial requests to a teacher or teacher-like role, depending on trial request
+
+db.trial.requests.find({status: 'approved'}).limit(10).forEach(function(trialRequest) {
+    var role = trialRequest.properties.role || 'teacher';
+    var user = db.users.findOne({_id: trialRequest.applicant}, {role:1, name:1, email:1});
+    print(JSON.stringify(user), JSON.stringify(trialRequest.properties), role);
+    if (!user.role) {
+        print(db.users.update({_id: trialRequest.applicant}, {$set: {role: role}}));
+    }
+});
+
 // Removes all users with a teacher-like role from classroom membership
 // Usage: copy and paste into mongo
 
