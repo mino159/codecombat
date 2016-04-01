@@ -15,13 +15,14 @@ block content
   
   +createClassButton
   
-  .container
-    h3(data-i18n='teacher.archived_classes')
-    h4(data-i18n='teacher.archived_classes_blurb')
-
-  .classes.container
-    each classroom in view.classrooms.models
-      if classroom.get('archived')
+  - var archivedClassrooms = view.classrooms.where({archived: true});
+  if _.size(archivedClassrooms)
+    .container
+      h3(data-i18n='teacher.archived_classes')
+      p(data-i18n='teacher.archived_classes_blurb')
+  
+    .classes.container
+      each classroom in archivedClassrooms
         +archivedClassRow(classroom)
       
 mixin classRow(classroom)
