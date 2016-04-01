@@ -55,9 +55,8 @@ module.exports = class TeacherClassView extends RootView
       @listenTo @students, 'sort', @renderSelectors.bind(@, '.students-table', '.student-levels-table')
       
       @classroom.sessions = new LevelSessions()
-      if @classroom.get('members')?.length > 0
-        @classroom.sessions.fetchForAllClassroomMembers(@classroom)
-        @supermodel.trackCollection(@classroom.sessions)
+      requests = @classroom.sessions.fetchForAllClassroomMembers(@classroom)
+      @supermodel.trackRequests(requests)
       
     @courses = new Courses()
     @courses.fetch()
@@ -72,7 +71,6 @@ module.exports = class TeacherClassView extends RootView
     @supermodel.trackCollection(@courseInstances)
 
   onLoaded: ->
-    console.log("loaded!")
     
     @classCode = @classroom.get('codeCamel') or @classroom.get('code')
     @joinURL = document.location.origin + "/courses?_cc=" + @classCode
