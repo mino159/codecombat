@@ -31,7 +31,7 @@ module.exports = class ConvertToTeacherAccountView extends RootView
 
   onLoaded: ->
     if @trialRequests.size() and me.isTeacher()
-      return application.router.navigate('/teachers/courses', { trigger: true, replace: true })
+      return application.router.navigate('/teachers', { trigger: true, replace: true })
     
     super()
 
