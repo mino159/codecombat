@@ -4,7 +4,7 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     no_ie: "CodeCombat nefunguje v prehliadači Internet Explorer 8 a jeho starších verziách. Ospravedlňujeme sa." # Warning that only shows up in IE8 and older
     no_mobile: "CodeCombat nebol navrhnutý pre mobilné zariadenia a nemusí na nich fungovať správne!" # Warning that shows up on mobile devices
     play: "Hraj" # The big play button that opens up the campaign view.
-#    play_campaign_version: "Play Campaign Version" # Shows up under big play button if you only play /courses
+    play_campaign_version: "Hraj Kampaň" # Shows up under big play button if you only play /courses
     old_browser: "Ajaj, prehliadač je príliš starý. CodeCombat na ňom nepôjde. Je nám to ľúto!" # Warning that shows up on really old Firefox/Chrome/Safari
     old_browser_suffix: "Skúsiť sa to dá, ale asi to nepôjde."
     ipad_browser: "Zlé správy: CodeCombat nebeží na iPade v prehliadači. Dobré správy: naša iPad aplikácia čaká na schválenie od Apple."
@@ -100,23 +100,23 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     contact: "Kontakt"
     twitter_follow: "Sleduj na twitteri"
     teachers: "Učitelia"
-#    careers: "Careers"
+    careers: "Profesie"
 #    facebook: "Facebook"
 #    twitter: "Twitter"
-#    create_a_class: "Create a Class"
-#    other: "Other"
-#    learn_to_code: "Learn to Code!"
-#    toggle_nav: "Toggle navigation"
-#    jobs: "Jobs"
-#    schools: "Schools"
-#    educator_wiki: "Educator Wiki"
-#    request_quote: "Request a Quote"
-#    get_involved: "Get Involved"
+    create_a_class: "Vytvor triedu"
+    other: "Iné"
+    learn_to_code: "Nauč sa programovať!"
+    toggle_nav: "Prepnúť navigáciu"
+    jobs: "Práca"
+    schools: "Školy"
+    educator_wiki: "Vzdelávateľ Wiki"
+    request_quote: "Vyžiadaj citát"
+    get_involved: "Zapoj sa"
 #    open_source: "Open source (GitHub)"
-#    support: "Support"
+    support: "Podpora"
 #    faqs: "FAQs"
-#    help_pref: "Need help? Email"
-#    help_suff: "and we'll get in touch!"
+    help_pref: "Potrebuješ pomoc? Email"
+    help_suff: "a spojíme sa!"
 
   modal:
     close: "Zatvor"
@@ -128,14 +128,14 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
   diplomat_suggestion:
     title: "Pomôžte preložiť CodeCombat!" # This shows up when a player switches to a non-English language using the language selector.
     sub_heading: "Potrebujeme tvoje jazykové zručnosti."
-#    pitch_body: "We develop CodeCombat in English, but we already have players all over the world. Many of them want to play in {English} but don't speak English, so if you can speak both, please consider signing up to be a Diplomat and help translate both the CodeCombat website and all the levels into {English}."
-#    missing_translations: "Until we can translate everything into {English}, you'll see English when {English} isn't available."
+    pitch_body: "Vytvorili sme CodeCombat v Angličtine, ale hráčov máme už po celom svete. Mnohí z nich chcú hrať v {Slovenčine} ibaže nerozumejú Anglicky, takže ak rozprávaš oboma, prosím zváž zapísanie sa ako Diplomat a pomôž preložiť CodeCombat webstránku a rovnako aj všetky levely do {Slovenčiny}."
+    missing_translations: "Kým všetko preložíme do {Slovenčiny}, uvidíš Angličtinu kým {Slovenčina} nie je dostupná."
     learn_more: "Zisti viac, ako byť Diplomat"
     subscribe_as_diplomat: "Prihlásiť sa ako Diplomat"
 
   play:
     play_as: "Hraj ako" # Ladder page
-#    compete: "Compete!" # Course details page
+    compete: "Súťažiť!" # Course details page
     spectate: "Sledovať" # Ladder page
     players: "hráči" # Hover over a level on /play
     hours_played: "odohratých hodín" # Hover over a level on /play
@@ -160,7 +160,7 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     level_difficulty: "Obtiažnosť."
 #    play_classroom_version: "Play Classroom Version" # Choose a level in campaign version that you also can play in one of your courses
     campaign_beginner: "Kampaň pre začiatočníkov"
-    awaiting_levels_adventurer_prefix: "Každy týždeň 5 nových levelov." # {change}
+    awaiting_levels_adventurer_prefix: "Každý týždeň 5 nových levelov." # {change}
     awaiting_levels_adventurer: "Prihlás sa ako Dobrodruh"
     awaiting_levels_adventurer_suffix: "budeš ako prvý hrať nové levely."
     adjust_volume: "Zmeniť hlasitosť"
@@ -197,17 +197,17 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     log_in: "prihlás sa pomocou hesla"
     required: "Najskôr sa musíš prihlásiť."
     login_switch: "Máš už účet ?"
-#    school_name: "School Name and City"
-#    optional: "optional"
-#    school_name_placeholder: "Example High School, Springfield, IL"
-#    or_sign_up_with: "or sign up with"
-#    connected_gplus_header: "You've successfully connected with Google+!"
-#    connected_gplus_p: "Finish signing up so you can log in with your Google+ account."
-#    gplus_exists: "You already have an account associated with Google+!"
-#    connected_facebook_header: "You've successfully connected with Facebook!"
-#    connected_facebook_p: "Finish signing up so you can log in with your Facebook account."
-#    facebook_exists: "You already have an account associated with Facebook!"
-#    hey_students: "Students, enter the class code from your teacher."
+    school_name: "Názov školy a Mesto"
+    optional: "dobrovoľné"
+    school_name_placeholder: "Napríklad Stredná škola, Springfield, IL"
+    or_sign_up_with: "alebo sa prihlás s"
+    connected_gplus_header: "Úspešne ste sa prihlásili pomocou Google+!"
+    connected_gplus_p: "Dokončte registráciu aby ste sa moholi prihlásiť pomocou účtu Google+."
+    gplus_exists: "Už existuje registrácia prepojená pomocou tohto účtu Google+!"
+    connected_facebook_header: "Úspešne ste sa prihlásili pomocou Facebook!"
+    connected_facebook_p: "Dokončte registráciu aby ste sa moholi prihlásiť pomocou účtu Facebook."
+    facebook_exists: "Už existuje registrácia prepojená pomocou tohto účtu Facebook!"
+    hey_students: "Študenti, zadajte kód triedy od Vášho učiteľa."
 
   recover:
     recover_account_title: "Obnov účet"
@@ -255,9 +255,9 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     accepted: "Prijaté"
     rejected: "Zamietnuté"
     withdrawn: "Uzatvorené"
-#    accept: "Accept"
-#    reject: "Reject"
-#    withdraw: "Withdraw"
+    accept: "Prijať"
+    reject: "Odmietnuť"
+    withdraw: "Odstúpiť"
     submitter: "Odosielateľ"
     submitted: "Odoslané"
     commit_msg: "Popis ukladania"
@@ -312,12 +312,12 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     years: "rokov"
 
   play_level:
-#    completed_level: "Completed Level:"
-#    course: "Course:"
+    completed_level: "Dokončený Level:"
+    course: "Kurz:"
     done: "Hotovo"
-#    next_level: "Next Level:"
-#    next_game: "Next game"
-#    show_menu: "Show game menu"
+    next_level: "Ďalší Level:"
+    next_game: "Ďalšia hra"
+    show_menu: "Ukáž menu"
     home: "Domov" # Not used any more, will be removed soon.
     level: "Úroveň" # Like "Level: Dungeons of Kithgard"
     skip: "Preskočiť"
@@ -347,12 +347,12 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     victory_saving_progress: "Stav ukladania"
     victory_go_home: "Návrat Domov"
     victory_review: "Povedz nám viac!"
-#    victory_review_placeholder: "How was the level?"
+    victory_review_placeholder: "Aký bol level?"
     victory_hour_of_code_done: "Skončil si?"
     victory_hour_of_code_done_yes: "Áno, pre dnešok som skončil™!"
     victory_experience_gained: "Získaných XP"
     victory_gems_gained: "Získaných kryštálov"
-#    victory_new_item: "New Item"
+    victory_new_item: "Nový Položka"
 #    victory_viking_code_school: "Holy smokes, that was a hard level you just beat! If you aren't already a software developer, you should be. You just got fast-tracked for acceptance with Viking Code School, where you can take your skills to the next level and become a professional web developer in 14 weeks."
     victory_become_a_viking: "Staň sa vikingom!"
     guide_title: "Návod"
@@ -376,8 +376,8 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
     time_current: "Teraz:"
     time_total: "Max:"
     time_goto: "Choď na:"
-#    non_user_code_problem_title: "Unable to Load Level"
-#    infinite_loop_title: "Infinite Loop Detected"
+    non_user_code_problem_title: "Nemožno Načítať Level"
+    infinite_loop_title: "Detekovaná Nekonečná Slučka"
 #    infinite_loop_description: "The initial code to build the world never finished running. It's probably either really slow or has an infinite loop. Or there might be a bug. You can either try running this code again or reset the code to the default state. If that doesn't fix it, please let us know."
 #    check_dev_console: "You can also open the developer console to see what might be going wrong."
 #    check_dev_console_link: "(instructions)"
@@ -606,7 +606,7 @@ module.exports = nativeDescription: "slovenčina", englishDescription: "Slovak",
   skill_docs:
     writable: "zapisovatelné" # Hover over "attack" in Your Skills while playing a level to see most of this
     read_only: "iba na čítanie"
-#    action: "Action"
+    action: "Akcia"
 #    spell: "Spell"
     action_name: "názov"
     action_cooldown: "Zaberie"
